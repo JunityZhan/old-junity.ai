@@ -1,0 +1,26 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.IP }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        script: |
+          cd junity.ai
+          git pull
+          docker build -t junity.ai .
+          docker stop junity.ai || true
+          docker rm junity.ai || true
+          docker image prune -a -f
+          docker run -d --name junity.ai -p 3000:3000 junity.ai
