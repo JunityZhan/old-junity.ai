@@ -19,8 +19,8 @@ jobs:
         script: |
           cd junity.ai
           git pull
-          docker build -t junity.ai .
-          docker stop junity.ai || true
-          docker rm junity.ai || true
-          docker image prune -a -f
-          docker run -d --name junity.ai -p 3000:3000 junity.ai
+          sudo docker build -t junity.ai .
+          sudo docker stop junity.ai || true
+          sudo docker rm junity.ai || true
+          sudo docker image prune -a -f
+          sudo docker run -d --name junity.ai -p 3000:3000 junity.ai
