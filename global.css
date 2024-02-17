@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .text-edge-outline {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  }
+} 
+
+@keyframes flicker {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.941);
+  }
+  50% {
+    text-shadow: 0 0 10px rgb(4, 169, 163);
+  }
+}
+
+.flickering-text {
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-expand {
+  animation: expand 0.5s forwards;
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-shrink {
+  animation: shrink 0.5s forwards;
+}
+
+.text-color-default {
+  color: #ffffff; /* 白色 */
+}
