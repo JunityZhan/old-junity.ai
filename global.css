@@ -6,20 +6,36 @@
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255,255,255,0.3);
   }
-} 
+}
+
+@font-face {
+  font-family: 'ali'; /* 给字体起个名字 */
+  src: url('/fonts/ali.woff2') format('woff2'), /* 首选的更高压缩率格式 */
+  url('/fonts/ali.woff') format('woff'); /* 兼容性后备选项 */
+  font-weight: bold;
+  font-style: normal; /* 根据需要调整 */
+}
+
 
 @keyframes flicker {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.941);
+  0%, 20%, 40%, 60%, 80%, 100% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.941), 
+      0 0 20px rgba(255, 255, 255, 0.7), 
+      0 0 30px rgba(255, 255, 255, 0.5);
   }
-  50% {
-    text-shadow: 0 0 10px rgb(4, 169, 163);
+  10%, 30%, 50%, 70%, 90% {
+    text-shadow: 
+      0 0 10px rgb(162, 255, 252), 
+      0 0 20px rgba(162, 255, 252, 0.7), 
+      0 0 30px rgba(162, 255, 252, 0.5);
   }
 }
 
 .flickering-text {
-  animation: flicker 2s infinite alternate;
+  animation: flicker 20s infinite;
 }
+
 
 @keyframes expand {
   from {
@@ -49,4 +65,12 @@
 
 .text-color-default {
   color: #ffffff; /* 白色 */
+}
+
+body {
+  font-family: 'Cal Sans SemiBold';
+}
+
+h1 {
+  font-family: 'ali', sans-serif;
 }

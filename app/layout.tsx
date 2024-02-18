@@ -49,10 +49,10 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const calSans = LocalFont({
-  src: "../public/fonts/CalSans-SemiBold.ttf",
-  variable: "--font-calsans",
-});
+// const calSans = LocalFont({
+//   src: "../public/fonts/CalSans-SemiBold.ttf",
+//   variable: "--font-calsans",
+// });
 
 export default function RootLayout({
   children,
@@ -60,9 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-      <head>
-      </head>
+    <html lang="en" className={inter.variable}>
       <body
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
