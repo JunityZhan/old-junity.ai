@@ -31,7 +31,7 @@
 }
 
 .animate-expand {
-  animation: expand 0.5s forwards;
+  animation: expand 1s forwards;
 }
 
 @keyframes shrink {
@@ -44,7 +44,7 @@
 }
 
 .animate-shrink {
-  animation: shrink 0.5s forwards;
+  animation: shrink 1s forwards;
 }
 
 .text-color-default {
