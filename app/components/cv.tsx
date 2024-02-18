@@ -2,7 +2,7 @@ import React from 'react';
 
 const CV = () => {
   return (
-    <div className="text-color-default">
+    <div>
       你发现了隐藏字体<br />你发现了隐藏字体<br />你发现了隐藏字体
       你发现了隐藏字体<br />你发现了隐藏字体
       你发现了隐藏字体<br />你发现了隐藏字体
