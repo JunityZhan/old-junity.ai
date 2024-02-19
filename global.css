@@ -70,11 +70,7 @@
   animation: shrink 1s forwards;
 }
 
-.text-color-default {
-  color: #ffffff; /* 白色 */
-}
-
 body {
   font-family: 'Cal-Sans-SemiBold';
-  color: #888888;
+  color: #999999;
 }

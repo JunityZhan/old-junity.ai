@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
+import { FloatButton } from 'antd';
 
 const ContentToggle = ({ children }: { children: React.ReactNode }) => {
     const [showContent, setShowContent] = useState(false);
@@ -12,11 +13,14 @@ const ContentToggle = ({ children }: { children: React.ReactNode }) => {
 
     useEffect(() => {
         if (showContent && contentRef.current) {
-            setContentHeight(contentRef.current.scrollHeight);
+            // 计算视口高度的 70%
+            const heightInVh = window.innerHeight * 0.7;
+            setContentHeight(heightInVh);
         } else {
             setContentHeight(0);
         }
     }, [showContent]);
+    
 
     return (
         <>
@@ -38,16 +42,21 @@ const ContentToggle = ({ children }: { children: React.ReactNode }) => {
                 </h1>
             </div>
             <div
+                id="backTop"
                 ref={contentRef}
                 style={{
-                    overflow: 'hidden',
-                    transition: 'height 1s ease',
+                    overflow: 'auto', // 当内容超出div的最大高度时显示滚动条
+                    transition: 'height 1s ease-in-out',
                     height: `${contentHeight}px`,
-                    maxWidth: '100%',
+                    maxHeight: '70vh',
+                    scrollbarWidth: 'none', // 隐藏滚动条
                 }}
             >
                 {children}
+                <FloatButton.BackTop target={() => document.getElementById('backTop') || window || document.documentElement} />
             </div>
+
+
             <div
                 className={`w-screen h-px ${showContent ? 'animate-expand' : 'animate-shrink'} bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0`}
             ></div>

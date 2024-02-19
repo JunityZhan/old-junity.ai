@@ -1,7 +1,7 @@
 import "../global.css";
 import { Inter } from "next/font/google";
-import LocalFont from "next/font/local";
 import { Metadata } from "next";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 export const metadata: Metadata = {
   title: {
@@ -65,7 +65,7 @@ export default function RootLayout({
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
-        {children}
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );
