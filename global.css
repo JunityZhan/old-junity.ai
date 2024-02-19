@@ -9,6 +9,13 @@
 }
 
 @font-face {
+  font-family: 'Cal-Sans-SemiBold';
+  src: url('/fonts/CalSans-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'ali'; /* 给字体起个名字 */
   src: url('/fonts/ali.woff2') format('woff2'), /* 首选的更高压缩率格式 */
   url('/fonts/ali.woff') format('woff'); /* 兼容性后备选项 */
@@ -68,10 +75,6 @@
 }
 
 body {
-  font-family: 'Cal Sans SemiBold';
+  font-family: 'Cal-Sans-SemiBold';
   color: #888888;
-}
-
-h1 {
-  font-family: 'ali', sans-serif;
 }
