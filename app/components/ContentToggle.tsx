@@ -51,12 +51,11 @@ const ContentToggle = ({ children }: { children: React.ReactNode }) => {
                     maxHeight: '70vh',
                     scrollbarWidth: 'none', // 隐藏滚动条
                 }}
+                className='flex justify-center'
             >
                 {children}
-                <FloatButton.BackTop target={() => document.getElementById('backTop') || window || document.documentElement} />
             </div>
-
-
+            <FloatButton.BackTop target={() => document.getElementById('backTop') || window || document.documentElement} />
             <div
                 className={`w-screen h-px ${showContent ? 'animate-expand' : 'animate-shrink'} bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0`}
             ></div>
